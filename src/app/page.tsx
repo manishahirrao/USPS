@@ -1,65 +1,477 @@
-import Image from "next/image";
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import TrackingForm from '@/components/tracking/TrackingForm'
+import { Search, Truck, Shield, Clock, Package, ArrowRight, Zap, Globe, Users, TrendingUp, Star, ExternalLink } from 'lucide-react'
+import '@/styles/animations.css'
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex flex-col">
+      <Header />
+      
+      <main className="flex-grow">
+        {/* Enhanced Hero Section with Integrated Tracking */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#2E5288] via-[#1e3a6f] to-[#15223e] text-white">
+          <div className="absolute inset-0 bg-black opacity-10"></div>
+          {/* Hero Image Background */}
+          <div className="absolute inset-0">
+            <img 
+              src="/home-hero.jpeg" 
+              alt="USPS Package Tracking" 
+              className="w-full h-full object-cover opacity-20"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          </div>
+          {/* Animated background elements */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-48 h-48 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white/5 rounded-full blur-xl animate-pulse delay-2000"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div className="text-center mb-6">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">
+                Track USPS Packages
+                <span className="block text-[#a8d8e8]">With Confidence</span>
+              </h1>
+              <p className="text-base md:text-lg text-[#c9d2d9] mb-8 max-w-3xl mx-auto leading-relaxed">
+                Third-party service that redirects you to official USPS tracking for accurate, real-time package information
+              </p>
+            </div>
+
+            {/* Tracking Form Integrated in Hero */}
+            <div className="max-w-3xl mx-auto">
+              <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-10 relative overflow-hidden">
+                {/* Decorative gradient border */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#2E5288]/5 via-transparent to-[#2E5288]/5 rounded-3xl pointer-events-none"></div>
+                
+                <div className="relative text-center mb-6">
+                  
+                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                    Enter Your Tracking Number
+                  </h2>
+                  <p className="text-sm md:text-base text-gray-600">
+                    Get instant, real-time package updates
+                  </p>
+                </div>
+                <TrackingForm />
+              </div>
+            </div>
+          </div>
+
+          {/* Wave separator */}
+          <div className="absolute bottom-0 left-0 right-0">
+            <svg className="w-full h-16" viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 32L48 37.3C96 43 192 53 288 53.3C384 53 480 43 576 42.7C672 43 768 53 864 58.7C960 64 1056 64 1152 58.7C1248 53 1344 43 1392 37.3L1440 32V64H1392C1344 64 1248 64 1152 64C1056 64 960 64 864 64C768 64 672 64 576 64C480 64 384 64 288 64C192 64 96 64 48 64H0V32Z" fill="currentColor" className="text-gray-50"/>
+            </svg>
+          </div>
+        </section>
+
+        {/* Enhanced Stats Section */}
+        <section className="py-16 bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Trusted by Millions Worldwide
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Join the growing community of users who rely on our tracking portal
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-2xl md:text-3xl font-bold text-[#2E5288] mb-2">10M+</div>
+                <p className="text-sm md:text-base text-gray-600 font-medium">Monthly Redirects</p>
+              </div>
+              <div className="text-center bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-2xl md:text-3xl font-bold text-[#2E5288] mb-2">100%</div>
+                <p className="text-sm md:text-base text-gray-600 font-medium">Free Service</p>
+              </div>
+              <div className="text-center bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-2xl md:text-3xl font-bold text-[#2E5288] mb-2">50+</div>
+                <p className="text-sm md:text-base text-gray-600 font-medium">USPS Services</p>
+              </div>
+              <div className="text-center bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="text-2xl md:text-3xl font-bold text-[#2E5288] mb-2">24/7</div>
+                <p className="text-sm md:text-base text-gray-600 font-medium">Portal Available</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Enhanced Features Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Why Choose Our Tracking Portal?
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Convenient access to official USPS tracking with enhanced user experience
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+                <div className="bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Search className="h-10 w-10 text-[#2E5288]" />
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
+                  Quick Access
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Instant redirect to official USPS tracking with your tracking number pre-filled for convenience
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+                <div className="bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <ExternalLink className="h-10 w-10 text-[#2E5288]" />
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
+                  Official Results
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Get accurate, real-time tracking information directly from the official USPS website
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+                <div className="bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Zap className="h-10 w-10 text-[#2E5288]" />
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
+                  One-Click Tracking
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Simple interface that gets you to USPS tracking instantly without navigating through their website
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+                <div className="bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="h-10 w-10 text-[#2E5288]" />
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
+                  Secure Tracking
+                </h3>
+                <p className="text-gray-600 leading-relaxed mt-4">
+                  No, we are an independent third-party portal that provides convenient access to the official USPS tracking website. All tracking information comes directly from USPS systems.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                How Our Portal Works
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Get to official USPS tracking in three simple steps
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="relative">
+                <div className="bg-[#2E5288] text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                  1
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 text-center">
+                  Enter Tracking Number
+                </h3>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  Input your USPS tracking number in our convenient tracking form
+                </p>
+                <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gray-300"></div>
+              </div>
+
+              <div className="relative">
+                <div className="bg-[#2E5288] text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                  2
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 text-center">
+                  Redirect to USPS
+                </h3>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  We instantly redirect you to the official USPS tracking page with your number pre-filled
+                </p>
+                <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gray-300"></div>
+              </div>
+
+              <div className="relative">
+                <div className="bg-[#2E5288] text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                  3
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 text-center">
+                  View Official Results
+                </h3>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  Get accurate tracking information directly from the official USPS website
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Enhanced Testimonials Section */}
+        <section className="py-20 bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                What Our Users Say
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Trusted by millions of users for convenient access to USPS tracking
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 testimonial-card relative overflow-hidden">
+                <div className="absolute top-4 right-4">
+                  <div className="bg-[#2E5288]/10 w-12 h-12 rounded-full flex items-center justify-center">
+                    <Star className="h-6 w-6 text-[#2E5288]" />
+                  </div>
+                </div>
+                <div className="flex items-center mb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    JD
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-bold text-gray-900 text-base md:text-lg">John Davis</h3>
+                    <div className="flex text-yellow-400">
+                      {[1,2,3,4,5].map((star) => (
+                        <Star key={star} className="w-4 h-4 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  "This portal makes tracking so convenient! I love how it takes me straight to the official USPS page with my tracking number already filled in."
+                </p>
+                <div className="text-sm text-gray-500 font-medium">
+                  Small Business Owner • California
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 testimonial-card relative overflow-hidden">
+                <div className="absolute top-4 right-4">
+                  <div className="bg-[#2E5288]/10 w-12 h-12 rounded-full flex items-center justify-center">
+                    <Star className="h-6 w-6 text-[#2E5288]" />
+                  </div>
+                </div>
+                <div className="flex items-center mb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    SM
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-bold text-gray-900 text-base md:text-lg">Sarah Miller</h3>
+                    <div className="flex text-yellow-400">
+                      {[1,2,3,4,5].map((star) => (
+                        <Star key={star} className="w-4 h-4 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  "Such a time-saver! Instead of navigating through the USPS website, I just enter my number here and get straight to the tracking results."
+                </p>
+                <div className="text-sm text-gray-500 font-medium">
+                  E-commerce Manager • New York
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 testimonial-card relative overflow-hidden">
+                <div className="absolute top-4 right-4">
+                  <div className="bg-[#2E5288]/10 w-12 h-12 rounded-full flex items-center justify-center">
+                    <Star className="h-6 w-6 text-[#2E5288]" />
+                  </div>
+                </div>
+                <div className="flex items-center mb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    RJ
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-bold text-gray-900 text-base md:text-lg">Robert Johnson</h3>
+                    <div className="flex text-yellow-400">
+                      {[1,2,3,4,5].map((star) => (
+                        <Star key={star} className="w-4 h-4 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  "Simple and effective! I appreciate that it's transparent about being a third-party service and gets me to the official USPS tracking page quickly."
+                </p>
+                <div className="text-sm text-gray-500 font-medium">
+                  Freelancer • Texas
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Enhanced FAQ Section */}
+        <section className="py-20 bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff]">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Quick answers to common questions about our tracking portal
+              </p>
+            </div>
+            
+            <div className="space-y-6">
+              <details className="bg-white rounded-2xl shadow-xl border border-gray-100 group faq-item hover:shadow-2xl transition-shadow duration-300">
+                <summary className="p-6 cursor-pointer font-semibold text-gray-900 hover:text-[#2E5288] transition-colors flex items-center justify-between">
+                  <span className="flex items-center gap-3">
+                    <div className="bg-[#2E5288]/10 w-8 h-8 rounded-full flex items-center justify-center">
+                      <span className="text-[#2E5288] font-bold text-sm">1</span>
+                    </div>
+                    Is this portal affiliated with USPS?
+                  </span>
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-6">
+                  <p className="text-gray-600 leading-relaxed">
+                    No, we are an independent third-party portal that provides convenient access to the official USPS tracking website. All tracking information comes directly from USPS systems.
+                  </p>
+                </div>
+              </details>
+
+              <details className="bg-white rounded-2xl shadow-xl border border-gray-100 group faq-item hover:shadow-2xl transition-shadow duration-300">
+                <summary className="p-6 cursor-pointer font-semibold text-gray-900 hover:text-[#2E5288] transition-colors flex items-center justify-between">
+                  <span className="flex items-center gap-3">
+                    <div className="bg-[#2E5288]/10 w-8 h-8 rounded-full flex items-center justify-center">
+                      <span className="text-[#2E5288] font-bold text-sm">2</span>
+                    </div>
+                    Is this service really free?
+                  </span>
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-6">
+                  <p className="text-gray-600 leading-relaxed">
+                    Yes! Our tracking portal is completely free with no hidden fees, no subscription requirements, and no limits on the number of packages you can track.
+                  </p>
+                </div>
+              </details>
+
+              <details className="bg-white rounded-2xl shadow-xl border border-gray-100 group faq-item hover:shadow-2xl transition-shadow duration-300">
+                <summary className="p-6 cursor-pointer font-semibold text-gray-900 hover:text-[#2E5288] transition-colors flex items-center justify-between">
+                  <span className="flex items-center gap-3">
+                    <div className="bg-[#2E5288]/10 w-8 h-8 rounded-full flex items-center justify-center">
+                      <span className="text-[#2E5288] font-bold text-sm">3</span>
+                    </div>
+                    How many packages can I track at once?
+                  </span>
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-6">
+                  <p className="text-gray-600 leading-relaxed">
+                    Our portal provides individual tracking - you can track one package at a time for focused, accurate results. Simply enter your tracking number and get instant access to official USPS tracking.
+                  </p>
+                </div>
+              </details>
+
+              <details className="bg-white rounded-2xl shadow-xl border border-gray-100 group faq-item hover:shadow-2xl transition-shadow duration-300">
+                <summary className="p-6 cursor-pointer font-semibold text-gray-900 hover:text-[#2E5288] transition-colors flex items-center justify-between">
+                  <span className="flex items-center gap-3">
+                    <div className="bg-[#2E5288]/10 w-8 h-8 rounded-full flex items-center justify-center">
+                      <span className="text-[#2E5288] font-bold text-sm">4</span>
+                    </div>
+                    Does this portal support international tracking?
+                  </span>
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-6">
+                  <p className="text-gray-600 leading-relaxed">
+                    Our portal redirects to official USPS tracking, which supports international packages. As long as you have a valid USPS tracking number, you'll get accurate tracking information.
+                  </p>
+                </div>
+              </details>
+
+              <details className="bg-white rounded-2xl shadow-xl border border-gray-100 group faq-item hover:shadow-2xl transition-shadow duration-300">
+                <summary className="p-6 cursor-pointer font-semibold text-gray-900 hover:text-[#2E5288] transition-colors flex items-center justify-between">
+                  <span className="flex items-center gap-3">
+                    <div className="bg-[#2E5288]/10 w-8 h-8 rounded-full flex items-center justify-center">
+                      <span className="text-[#2E5288] font-bold text-sm">5</span>
+                    </div>
+                    How often is tracking information updated on the official USPS site?
+                  </span>
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-6">
+                  <p className="text-gray-600 leading-relaxed">
+                    The official USPS tracking website updates information in real-time as new data becomes available. Most packages receive updates every 2-4 hours during transit.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        {/* Enhanced CTA Section - Moved to Bottom */}
+        <section className="py-20 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white relative overflow-hidden">
+          {/* Animated background elements */}
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-48 h-48 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
+          
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="mb-12">
+              <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-8 hover:scale-110 transition-transform duration-300">
+                <TrendingUp className="h-12 w-12 text-white" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Start Tracking Today
+              </h2>
+              <p className="text-lg md:text-xl text-[#a8d8e8] mb-8 max-w-2xl mx-auto">
+                Join millions of users who trust our reliable USPS tracking portal
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="bg-white text-[#2E5288] px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 inline-flex items-center gap-3 shadow-xl">
+                <Search className="h-5 w-5" />
+                Track Package
+              </button>
+              <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-[#2E5288] transition-all duration-300 hover:scale-105 inline-flex items-center gap-3">
+                <Users className="h-5 w-5" />
+                Learn More
+              </button>
+            </div>
+            
+            {/* Trust indicators */}
+            <div className="mt-16 flex flex-wrap justify-center gap-8">
+              <div className="flex items-center gap-2 text-white/80">
+                <Shield className="h-5 w-5" />
+                <span className="text-sm">100% Secure</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/80">
+                <Clock className="h-5 w-5" />
+                <span className="text-sm">Real-time Updates</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/80">
+                <Package className="h-5 w-5" />
+                <span className="text-sm">Free Forever</span>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+
+      <Footer />
     </div>
-  );
+  )
 }

@@ -1,0 +1,250 @@
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import { FileText, CheckCircle, AlertCircle, Shield, Users, Gavel } from 'lucide-react'
+
+export default function TermsPage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex flex-col">
+      <Header />
+      
+      <main className="flex-grow py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Enhanced Hero Section */}
+          <div className="text-center mb-16">
+            <div className="w-16 h-16 bg-[#e8f4fd] rounded-full flex items-center justify-center mx-auto mb-6">
+              <FileText className="h-8 w-8 text-[#2E5288]" />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Terms of Service
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Please read these terms carefully before using our USPS tracking service
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <div className="bg-[#e8f4fd] px-4 py-2 rounded-full flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-[#2E5288]" />
+                <span className="font-semibold text-[#2E5288]">Free Service</span>
+              </div>
+              <div className="bg-[#e8f4fd] px-4 py-2 rounded-full flex items-center gap-2">
+                <Shield className="h-4 w-4 text-[#2E5288]" />
+                <span className="font-semibold text-[#2E5288]">User Protection</span>
+              </div>
+              <div className="bg-[#e8f4fd] px-4 py-2 rounded-full flex items-center gap-2">
+                <Gavel className="h-4 w-4 text-[#2E5288]" />
+                <span className="font-semibold text-[#2E5288]">Fair Terms</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-12 border border-gray-100">
+            {/* Acceptance of Terms */}
+            <section className="group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <CheckCircle className="h-6 w-6 text-white" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Acceptance of Terms
+                </h2>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                By accessing and using our USPS tracking service, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our service.
+              </p>
+            </section>
+
+            {/* Service Description */}
+            <section className="group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <FileText className="h-6 w-6 text-white" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Service Description
+                </h2>
+              </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                USPS Tracking is a free third-party service that provides comprehensive package tracking capabilities:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-gray-900 mb-2">Core Features</h3>
+                  <p className="text-gray-600 text-sm">Real-time package tracking and delivery updates</p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-gray-900 mb-2">Tracking History</h3>
+                  <p className="text-gray-600 text-sm">Complete event timeline and status information</p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-gray-900 mb-2">Delivery Estimates</h3>
+                  <p className="text-gray-600 text-sm">AI-powered delivery date predictions</p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-gray-900 mb-2">Multi-tracking</h3>
+                  <p className="text-gray-600 text-sm">Track up to 35 packages simultaneously</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Service Limitations */}
+            <section className="group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <AlertCircle className="h-6 w-6 text-white" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Service Limitations
+                </h2>
+              </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Please note the following important limitations:
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#2E5288] rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Third-Party Service</h3>
+                    <p className="text-gray-600 text-sm">We are not affiliated with USPS or the United States Postal Service</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#2E5288] rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Data Dependency</h3>
+                    <p className="text-gray-600 text-sm">Tracking information depends on USPS data availability and accuracy</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#2E5288] rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Service Availability</h3>
+                    <p className="text-gray-600 text-sm">Service may be subject to technical issues or maintenance</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* User Responsibilities */}
+            <section className="group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  User Responsibilities
+                </h2>
+              </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                As a user of our service, you agree to:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="border border-gray-200 p-4 rounded-lg hover:border-[#2E5288] transition-colors">
+                  <h3 className="font-semibold text-gray-900 mb-2">Accurate Information</h3>
+                  <p className="text-gray-600 text-sm">Provide valid tracking numbers and information</p>
+                </div>
+                <div className="border border-gray-200 p-4 rounded-lg hover:border-[#2E5288] transition-colors">
+                  <h3 className="font-semibold text-gray-900 mb-2">Legitimate Use</h3>
+                  <p className="text-gray-600 text-sm">Use service only for legitimate tracking purposes</p>
+                </div>
+                <div className="border border-gray-200 p-4 rounded-lg hover:border-[#2E5288] transition-colors">
+                  <h3 className="font-semibold text-gray-900 mb-2">No Abuse</h3>
+                  <p className="text-gray-600 text-sm">Avoid automated scripts or excessive requests</p>
+                </div>
+                <div className="border border-gray-200 p-4 rounded-lg hover:border-[#2E5288] transition-colors">
+                  <h3 className="font-semibold text-gray-900 mb-2">Legal Compliance</h3>
+                  <p className="text-gray-600 text-sm">Comply with all applicable laws and regulations</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Privacy & Data */}
+            <section className="bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff] p-6 rounded-xl">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center">
+                  <Shield className="h-6 w-6 text-white" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Privacy and Data Protection
+                </h2>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Your privacy is important to us. Please review our Privacy Policy to understand how we collect, use, and protect your information.
+              </p>
+              <p className="text-gray-600">
+                By using our service, you consent to the collection and use of information as described in our Privacy Policy, including tracking numbers, usage data, and technical information necessary for service delivery.
+              </p>
+            </section>
+
+            {/* Disclaimers */}
+            <section className="group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <AlertCircle className="h-6 w-6 text-white" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Disclaimers & Liability
+                </h2>
+              </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Our service is provided "as is" without warranties of any kind:
+              </p>
+              <div className="bg-red-50 border border-red-200 p-6 rounded-lg">
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700">
+                      <strong>No Guarantee:</strong> We cannot guarantee 100% accuracy or reliability of tracking information
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700">
+                      <strong>No Liability:</strong> We are not liable for lost, damaged, or delayed packages
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700">
+                      <strong>Service Availability:</strong> Service may be interrupted for maintenance or technical issues
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Contact */}
+            <section className="bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] p-8 rounded-xl text-white">
+              <h2 className="text-2xl font-bold mb-6">Legal Questions?</h2>
+              <p className="text-[#a8d8e8] mb-6">
+                If you have questions about these Terms of Service, our legal team is here to help.
+              </p>
+              <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg">
+                <div className="space-y-3">
+                  <p className="flex items-center gap-3">
+                    <span className="font-semibold">Email:</span>
+                    <span>legal@uspstracking.us</span>
+                  </p>
+                  <p className="flex items-center gap-3">
+                    <span className="font-semibold">Phone:</span>
+                    <span>1-800-TRACK-US</span>
+                  </p>
+                  <p className="flex items-center gap-3">
+                    <span className="font-semibold">Response Time:</span>
+                    <span>Within 48 hours</span>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <div className="border-t pt-8 text-center">
+              <p className="text-gray-500">
+                Last Updated: December 18, 2024 • Effective Date: December 18, 2024
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  )
+}
