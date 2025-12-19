@@ -129,36 +129,19 @@ export default function DonationPage() {
           <div className="absolute top-40 right-20 w-48 h-48 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white/5 rounded-full blur-xl animate-pulse delay-2000"></div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-            <div className="text-center">
-              <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-8 hover:scale-110 transition-transform duration-300">
-                <Heart className="h-12 w-12 text-white" />
-              </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                Support Our Portal
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div className="text-center animate-fade-in-up">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight animate-fade-in-up-delay-1">
+                Support Our Mission
               </h1>
-              <p className="text-lg md:text-xl text-[#a8d8e8] mb-12 max-w-3xl mx-auto leading-relaxed">
-                Help us continue providing free access to USPS tracking services for millions of users worldwide
+              <p className="text-base md:text-lg text-[#a8d8e8] mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
+                Help us keep our USPS tracking portal free and accessible to everyone. Your donation ensures we can continue providing reliable tracking services at no cost.
               </p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5" />
-                  <span className="font-semibold">Tax Deductible</span>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3">
-                  <Shield className="h-5 w-5" />
-                  <span className="font-semibold">Secure Payment</span>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3">
-                  <Target className="h-5 w-5" />
-                  <span className="font-semibold">Transparent</span>
-                </div>
-              </div>
             </div>
           </div>
 
           {/* Wave separator */}
-          <div className="absolute bottom-0 left-0 right-0">
+          <div className="absolute bottom-0 left-0 right-0 animate-wave">
             <svg className="w-full h-16" viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 32L48 37.3C96 43 192 53 288 53.3C384 53 480 43 576 42.7C672 43 768 53 864 58.7C960 64 1056 64 1152 58.7C1248 53 1344 43 1392 37.3L1440 32V64H1392C1344 64 1248 64 1152 64C1056 64 960 64 864 64C768 64 672 64 576 64C480 64 384 64 288 64C192 64 96 64 48 64H0V32Z" fill="currentColor" className="text-gray-50"/>
             </svg>
@@ -500,18 +483,14 @@ export default function DonationPage() {
             </div>
           </div>
 
-          {/* Enhanced Statistics */}
-          <section className="py-20 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white relative overflow-hidden">
-            {/* Animated background elements */}
-            <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
-            <div className="absolute bottom-10 right-10 w-48 h-48 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
-            
+          {/* Enhanced Statistics Section */}
+          <section className="py-12 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white relative overflow-hidden">
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">
+              <div className="text-center mb-8 animate-fade-in-up">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">
                   Your Support Makes a Difference
                 </h2>
-                <p className="text-xl text-[#a8d8e8] max-w-3xl mx-auto">
+                <p className="text-base md:text-lg text-[#a8d8e8] max-w-3xl mx-auto">
                   Together we can keep USPS tracking free for everyone
                 </p>
               </div>

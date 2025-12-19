@@ -1,6 +1,6 @@
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import { Shield, Lock, Eye, Database, Cookie, Users, AlertCircle } from 'lucide-react'
+import { Shield, Lock, Eye, Database, Cookie, Users, AlertCircle, CheckCircle, Target } from 'lucide-react'
 
 export default function PrivacyPage() {
   return (
@@ -10,31 +10,31 @@ export default function PrivacyPage() {
       <main className="flex-grow py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Enhanced Hero Section */}
-          <div className="text-center mb-16">
-            <div className="w-16 h-16 bg-[#e8f4fd] rounded-full flex items-center justify-center mx-auto mb-6">
-              <Shield className="h-8 w-8 text-[#2E5288]" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Privacy Policy
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Your privacy is our priority. Learn how we collect, use, and protect your information with complete transparency.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <div className="bg-[#e8f4fd] px-4 py-2 rounded-full flex items-center gap-2">
-                <Lock className="h-4 w-4 text-[#2E5288]" />
-                <span className="font-semibold text-[#2E5288]">Bank-Level Security</span>
-              </div>
-              <div className="bg-[#e8f4fd] px-4 py-2 rounded-full flex items-center gap-2">
-                <Eye className="h-4 w-4 text-[#2E5288]" />
-                <span className="font-semibold text-[#2E5288]">Transparent</span>
-              </div>
-              <div className="bg-[#e8f4fd] px-4 py-2 rounded-full flex items-center gap-2">
-                <Users className="h-4 w-4 text-[#2E5288]" />
-                <span className="font-semibold text-[#2E5288]">User-First</span>
+          <section className="relative overflow-hidden bg-gradient-to-br from-[#2E5288] via-[#1e3a6f] to-[#15223e] text-white">
+            <div className="absolute inset-0 bg-black opacity-10"></div>
+            {/* Animated background elements */}
+            <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
+            <div className="absolute top-40 right-20 w-48 h-48 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
+            <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white/5 rounded-full blur-xl animate-pulse delay-2000"></div>
+            
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+              <div className="text-center animate-fade-in-up">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight animate-fade-in-up-delay-1">
+                  Privacy Policy
+                </h1>
+                <p className="text-base md:text-lg text-[#a8d8e8] mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
+                  Learn how we protect your privacy and handle your data when using our USPS tracking portal.
+                </p>
               </div>
             </div>
-          </div>
+
+            {/* Wave separator */}
+            <div className="absolute bottom-0 left-0 right-0 animate-wave">
+              <svg className="w-full h-16" viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 32L48 37.3C96 43 192 53 288 53.3C384 53 480 43 576 42.7C672 43 768 53 864 58.7C960 64 1056 64 1152 58.7C1248 53 1344 43 1392 37.3L1440 32V64H1392C1344 64 1248 64 1152 64C1056 64 960 64 864 64C768 64 672 64 576 64C480 64 384 64 288 64C192 64 96 64 48 64H0V32Z" fill="currentColor" className="text-gray-50"/>
+              </svg>
+            </div>
+          </section>
 
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-12 border border-gray-100">
             {/* Information We Collect */}
@@ -220,13 +220,13 @@ export default function PrivacyPage() {
             </section>
 
             {/* Contact */}
-            <section className="bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] p-8 rounded-xl text-white">
-              <h2 className="text-2xl font-bold mb-6">Privacy Questions?</h2>
-              <p className="text-[#a8d8e8] mb-6">
+            <section className="bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] p-6 rounded-xl text-white">
+              <h2 className="text-xl md:text-2xl font-bold mb-4">Privacy Questions?</h2>
+              <p className="text-[#a8d8e8] mb-4">
                 If you have questions about this privacy policy or need to exercise your rights, we're here to help.
               </p>
-              <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg">
-                <div className="space-y-3">
+              <div className="bg-white/20 backdrop-blur-sm p-4 rounded-lg">
+                <div className="space-y-2">
                   <p className="flex items-center gap-3">
                     <span className="font-semibold">Email:</span>
                     <span>privacy@uspstracking.us</span>

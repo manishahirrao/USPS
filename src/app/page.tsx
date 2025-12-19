@@ -1,7 +1,7 @@
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import TrackingForm from '@/components/tracking/TrackingForm'
-import { Search, Truck, Shield, Clock, Package, ArrowRight, Zap, Globe, Users, TrendingUp, Star, ExternalLink } from 'lucide-react'
+import { Search, Truck, Shield, Clock, Package, ArrowRight, Zap, Globe, Users, TrendingUp, Star, ExternalLink, CheckCircle, Target, Bell, MapPin } from 'lucide-react'
 import '@/styles/animations.css'
 
 export default function Home() {
@@ -13,52 +13,23 @@ export default function Home() {
         {/* Enhanced Hero Section with Integrated Tracking */}
         <section className="relative overflow-hidden bg-gradient-to-br from-[#2E5288] via-[#1e3a6f] to-[#15223e] text-white">
           <div className="absolute inset-0 bg-black opacity-10"></div>
-          {/* Hero Image Background */}
-          <div className="absolute inset-0">
-            <img 
-              src="/home-hero.jpeg" 
-              alt="USPS Package Tracking" 
-              className="w-full h-full object-cover opacity-20"
-            />
-          </div>
-          {/* Animated background elements */}
-          <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-48 h-48 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white/5 rounded-full blur-xl animate-pulse delay-2000"></div>
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-            <div className="text-center mb-6">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">
-                Track USPS Packages
-                <span className="block text-[#a8d8e8]">With Confidence</span>
+            <div className="text-center animate-fade-in-up">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in-up-delay-1">
+                Track Your USPS Package Instantly
               </h1>
-              <p className="text-base md:text-lg text-[#c9d2d9] mb-8 max-w-3xl mx-auto leading-relaxed">
-                Third-party service that redirects you to official USPS tracking for accurate, real-time package information
+              <p className="text-lg md:text-xl text-[#a8d8e8] mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
+                Enter your USPS tracking number to get real-time updates and delivery information from our free tracking portal
               </p>
-            </div>
-
-            {/* Tracking Form Integrated in Hero */}
-            <div className="max-w-3xl mx-auto">
-              <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-10 relative overflow-hidden">
-                {/* Decorative gradient border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#2E5288]/5 via-transparent to-[#2E5288]/5 rounded-3xl pointer-events-none"></div>
-                
-                <div className="relative text-center mb-6">
-                  
-                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-                    Enter Your Tracking Number
-                  </h2>
-                  <p className="text-sm md:text-base text-gray-600">
-                    Get instant, real-time package updates
-                  </p>
-                </div>
+              <div className="animate-fade-in-up-delay-3">
                 <TrackingForm />
               </div>
             </div>
           </div>
 
           {/* Wave separator */}
-          <div className="absolute bottom-0 left-0 right-0">
+          <div className="absolute bottom-0 left-0 right-0 animate-wave">
             <svg className="w-full h-16" viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 32L48 37.3C96 43 192 53 288 53.3C384 53 480 43 576 42.7C672 43 768 53 864 58.7C960 64 1056 64 1152 58.7C1248 53 1344 43 1392 37.3L1440 32V64H1392C1344 64 1248 64 1152 64C1056 64 960 64 864 64C768 64 672 64 576 64C480 64 384 64 288 64C192 64 96 64 48 64H0V32Z" fill="currentColor" className="text-gray-50"/>
             </svg>
@@ -68,30 +39,30 @@ export default function Home() {
         {/* Enhanced Stats Section */}
         <section className="py-16 bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Trusted by Millions Worldwide
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Trusted by Millions for USPS Tracking
               </h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Join the growing community of users who rely on our tracking portal
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Join thousands of users who rely on our free tracking portal daily for accurate package information
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                <div className="text-2xl md:text-3xl font-bold text-[#2E5288] mb-2">10M+</div>
-                <p className="text-sm md:text-base text-gray-600 font-medium">Monthly Redirects</p>
+              <div className="text-center animate-scale-in">
+                <div className="text-3xl md:text-4xl font-bold text-[#2E5288] mb-2">10M+</div>
+                <p className="text-gray-600 text-sm md:text-base">Packages Tracked</p>
               </div>
-              <div className="text-center bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                <div className="text-2xl md:text-3xl font-bold text-[#2E5288] mb-2">100%</div>
-                <p className="text-sm md:text-base text-gray-600 font-medium">Free Service</p>
+              <div className="text-center animate-scale-in" style={{ animationDelay: '0.1s' }}>
+                <div className="text-3xl md:text-4xl font-bold text-[#2E5288] mb-2">99.9%</div>
+                <p className="text-gray-600 text-sm md:text-base">Uptime</p>
               </div>
-              <div className="text-center bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                <div className="text-2xl md:text-3xl font-bold text-[#2E5288] mb-2">50+</div>
-                <p className="text-sm md:text-base text-gray-600 font-medium">USPS Services</p>
+              <div className="text-center animate-scale-in" style={{ animationDelay: '0.2s' }}>
+                <div className="text-3xl md:text-4xl font-bold text-[#2E5288] mb-2">24/7</div>
+                <p className="text-gray-600 text-sm md:text-base">Free Access</p>
               </div>
-              <div className="text-center bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                <div className="text-2xl md:text-3xl font-bold text-[#2E5288] mb-2">24/7</div>
-                <p className="text-sm md:text-base text-gray-600 font-medium">Portal Available</p>
+              <div className="text-center animate-scale-in" style={{ animationDelay: '0.3s' }}>
+                <div className="text-3xl md:text-4xl font-bold text-[#2E5288] mb-2">50+</div>
+                <p className="text-gray-600 text-sm md:text-base">Countries</p>
               </div>
             </div>
           </div>
@@ -100,61 +71,49 @@ export default function Home() {
         {/* Enhanced Features Section */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 animate-fade-in-up">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Why Choose Our Tracking Portal?
+                Powerful USPS Tracking Features
               </h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Convenient access to official USPS tracking with enhanced user experience
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Everything you need to track your packages with our comprehensive USPS tracking portal
               </p>
             </div>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 group">
-                <div className="bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Search className="h-10 w-10 text-[#2E5288]" />
+              <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-slide-in-left">
+                <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Search className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
-                  Quick Access
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Instant redirect to official USPS tracking with your tracking number pre-filled for convenience
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Instant Search</h3>
+                <p className="text-gray-600 text-sm">
+                  Enter your USPS tracking number and get immediate results from our tracking portal
                 </p>
               </div>
-
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 group">
-                <div className="bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <ExternalLink className="h-10 w-10 text-[#2E5288]" />
+              <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-slide-in-left" style={{ animationDelay: '0.1s' }}>
+                <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Clock className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
-                  Official Results
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Get accurate, real-time tracking information directly from the official USPS website
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Real-time Updates</h3>
+                <p className="text-gray-600 text-sm">
+                  Get live tracking information as your package moves through the USPS network
                 </p>
               </div>
-
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 group">
-                <div className="bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Zap className="h-10 w-10 text-[#2E5288]" />
+              <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-slide-in-right" style={{ animationDelay: '0.2s' }}>
+                <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <MapPin className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
-                  One-Click Tracking
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Simple interface that gets you to USPS tracking instantly without navigating through their website
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Location Tracking</h3>
+                <p className="text-gray-600 text-sm">
+                  See exactly where your package is in the delivery process with detailed location data
                 </p>
               </div>
-
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 group">
-                <div className="bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Shield className="h-10 w-10 text-[#2E5288]" />
+              <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
+                <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Bell className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
-                  Secure Tracking
-                </h3>
-                <p className="text-gray-600 leading-relaxed mt-4">
-                  No, we are an independent third-party portal that provides convenient access to the official USPS tracking website. All tracking information comes directly from USPS systems.
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Delivery Alerts</h3>
+                <p className="text-gray-600 text-sm">
+                  Receive notifications when your package is out for delivery or has been delivered
                 </p>
               </div>
             </div>
@@ -164,7 +123,7 @@ export default function Home() {
         {/* How It Works */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 animate-fade-in-up">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                 How Our Portal Works
               </h2>
@@ -174,8 +133,8 @@ export default function Home() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="relative">
-                <div className="bg-[#2E5288] text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+              <div className="relative animate-scale-in">
+                <div className="bg-[#2E5288] text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold hover:scale-110 transition-transform duration-300">
                   1
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 text-center">
@@ -187,8 +146,8 @@ export default function Home() {
                 <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gray-300"></div>
               </div>
 
-              <div className="relative">
-                <div className="bg-[#2E5288] text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+              <div className="relative animate-scale-in" style={{ animationDelay: '0.2s' }}>
+                <div className="bg-[#2E5288] text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold hover:scale-110 transition-transform duration-300">
                   2
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 text-center">
@@ -223,7 +182,7 @@ export default function Home() {
                 What Our Users Say
               </h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Trusted by millions of users for convenient access to USPS tracking
+                See why users choose our USPS tracking portal to reach official USPS tracking information faster and with less effort.
               </p>
             </div>
             
@@ -320,7 +279,7 @@ export default function Home() {
                 Frequently Asked Questions
               </h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Quick answers to common questions about our tracking portal
+                Quick answers to common questions about using our USPS tracking portal and checking your USPS tracking number.
               </p>
             </div>
             
@@ -424,30 +383,21 @@ export default function Home() {
         </section>
 
         {/* Enhanced CTA Section - Moved to Bottom */}
-        <section className="py-20 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white relative overflow-hidden">
-          {/* Animated background elements */}
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-48 h-48 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
-          
+        <section className="py-12 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white relative overflow-hidden">
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="mb-12">
-              <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-8 hover:scale-110 transition-transform duration-300">
-                <TrendingUp className="h-12 w-12 text-white" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Start Tracking Today
+            <div className="mb-8 animate-fade-in-up">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                Start Tracking Your USPS Package Today
               </h2>
-              <p className="text-lg md:text-xl text-[#a8d8e8] mb-8 max-w-2xl mx-auto">
-                Join millions of users who trust our reliable USPS tracking portal
+              <p className="text-base md:text-lg text-[#a8d8e8] mb-6 max-w-2xl mx-auto">
+                Enter your USPS tracking number to use our free USPS tracking portal and get the latest official tracking updates and delivery information.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-white text-[#2E5288] px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 inline-flex items-center gap-3 shadow-xl">
-                <Search className="h-5 w-5" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up-delay-1">
+              <button className="bg-white text-[#2E5288] px-8 py-3 rounded-xl font-bold text-base hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl">
                 Track Package
               </button>
-              <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-[#2E5288] transition-all duration-300 hover:scale-105 inline-flex items-center gap-3">
-                <Users className="h-5 w-5" />
+              <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-xl font-bold text-base hover:bg-white hover:text-[#2E5288] transition-all duration-300 hover:scale-105">
                 Learn More
               </button>
             </div>

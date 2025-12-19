@@ -1,6 +1,13 @@
+import type { Metadata } from 'next'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import { Mail, Phone, MessageCircle, Clock, HelpCircle, Search, CheckCircle, Star, ArrowRight, Users, Headphones, FileText } from 'lucide-react'
+import { Mail, Phone, MessageCircle, Clock, HelpCircle, Search, CheckCircle, Star, ArrowRight, Users, Headphones, FileText, Target, Shield } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'USPS Tracking Support & Help Center | USPS Tracking',
+  description:
+    'Get help with our USPS tracking portal, tracking numbers, and delivery questions. Contact support by email, phone, or live chat and find quick answers in our USPS tracking FAQ and help resources.',
+}
 
 export default function SupportPage() {
   return (
@@ -16,36 +23,19 @@ export default function SupportPage() {
           <div className="absolute top-40 right-20 w-48 h-48 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white/5 rounded-full blur-xl animate-pulse delay-2000"></div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-            <div className="text-center">
-              <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-8 hover:scale-110 transition-transform duration-300">
-                <Headphones className="h-12 w-12 text-white" />
-              </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                Support Portal
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div className="text-center animate-fade-in-up">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight animate-fade-in-up-delay-1">
+                Support Center
               </h1>
-              <p className="text-lg md:text-xl text-[#a8d8e8] mb-12 max-w-3xl mx-auto leading-relaxed">
-                We're here to help you with our tracking portal and USPS access services
+              <p className="text-base md:text-lg text-[#a8d8e8] mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
+                Get help with USPS tracking, find answers to common questions, and contact our support team for assistance with our tracking portal.
               </p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5" />
-                  <span className="font-semibold">Portal Support</span>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3">
-                  <Star className="h-5 w-5" />
-                  <span className="font-semibold">Quick Help</span>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3">
-                  <Clock className="h-5 w-5" />
-                  <span className="font-semibold">Fast Response</span>
-                </div>
-              </div>
             </div>
           </div>
 
           {/* Wave separator */}
-          <div className="absolute bottom-0 left-0 right-0">
+          <div className="absolute bottom-0 left-0 right-0 animate-wave">
             <svg className="w-full h-16" viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 32L48 37.3C96 43 192 53 288 53.3C384 53 480 43 576 42.7C672 43 768 53 864 58.7C960 64 1056 64 1152 58.7C1248 53 1344 43 1392 37.3L1440 32V64H1392C1344 64 1248 64 1152 64C1056 64 960 64 864 64C768 64 672 64 576 64C480 64 384 64 288 64C192 64 96 64 48 64H0V32Z" fill="currentColor" className="text-gray-50"/>
             </svg>
@@ -60,7 +50,7 @@ export default function SupportPage() {
                 How Can We Help You?
               </h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Choose support option for our tracking portal services
+                Choose the support option that fits your question about USPS tracking numbers, package status, or using our USPS tracking portal.
               </p>
             </div>
             
@@ -73,7 +63,7 @@ export default function SupportPage() {
                   <h3 className="text-lg md:text-xl font-bold text-gray-900">Email Support</h3>
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base">
-                  Get detailed assistance via email for portal navigation and general inquiries
+                  Get detailed assistance via email for portal navigation, USPS tracking questions, and general inquiries.
                 </p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3">
@@ -103,7 +93,7 @@ export default function SupportPage() {
                   <h3 className="text-lg md:text-xl font-bold text-gray-900">Phone Support</h3>
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base">
-                  Speak directly with our support team for portal assistance and urgent matters
+                  Speak directly with our support team for USPS tracking portal assistance, delivery concerns, and urgent matters.
                 </p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3">
@@ -134,7 +124,7 @@ export default function SupportPage() {
                   <h3 className="text-lg md:text-xl font-bold text-gray-900">Live Chat</h3>
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base">
-                  Get instant help through our live chat for portal navigation and quick questions
+                  Get instant help through our live chat for portal navigation, USPS tracking number issues, and quick questions.
                 </p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3">
@@ -169,7 +159,7 @@ export default function SupportPage() {
                 Frequently Asked Questions
               </h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Quick answers to common tracking questions
+                Quick answers to common questions about our USPS tracking portal, your USPS tracking number, and package status.
               </p>
             </div>
             
@@ -180,7 +170,7 @@ export default function SupportPage() {
                   How do I track my package?
                 </summary>
                 <div className="p-6 pt-0 text-gray-600 leading-relaxed text-sm md:text-base">
-                  Simply enter your USPS tracking number in search field on our homepage and click "Track Package" to get real-time updates. You can track up to 35 packages at once.
+                  Simply enter your USPS tracking number in the search field on our homepage and click "Track Package" to open the official USPS tracking page and see real-time updates.
                 </div>
               </details>
 
@@ -238,25 +228,18 @@ export default function SupportPage() {
         </section>
 
         {/* Enhanced Help Resources */}
-        <section className="py-20 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white relative overflow-hidden">
-          {/* Animated background elements */}
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-48 h-48 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
-          
+        <section className="py-12 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white relative overflow-hidden">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8">
+            <div className="text-center mb-8">
+              <h2 className="text-xl md:text-2xl font-bold mb-4">
                 Additional Resources
               </h2>
-              <p className="text-lg md:text-xl text-[#a8d8e8] max-w-3xl mx-auto">
+              <p className="text-base md:text-lg text-[#a8d8e8] max-w-3xl mx-auto">
                 Everything you need to make the most of our tracking portal
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 hover:scale-105">
-                <div className="bg-white/20 backdrop-blur-sm w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Clock className="h-10 w-10 text-white" />
-                </div>
                 <h3 className="text-lg md:text-xl font-bold mb-4">Tracking History</h3>
                 <p className="text-[#a8d8e8] leading-relaxed mb-6 text-sm md:text-base">
                   View complete package journey from pickup to delivery with detailed timestamps
@@ -266,9 +249,6 @@ export default function SupportPage() {
                 </button>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 hover:scale-105">
-                <div className="bg-white/20 backdrop-blur-sm w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Mail className="h-10 w-10 text-white" />
-                </div>
                 <h3 className="text-lg md:text-xl font-bold mb-4">Email Notifications</h3>
                 <p className="text-[#a8d8e8] leading-relaxed mb-6 text-sm md:text-base">
                   Get automatic updates sent directly to your inbox as your package moves
@@ -278,9 +258,6 @@ export default function SupportPage() {
                 </button>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 hover:scale-105">
-                <div className="bg-white/20 backdrop-blur-sm w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <FileText className="h-10 w-10 text-white" />
-                </div>
                 <h3 className="text-lg md:text-xl font-bold mb-4">Help Center</h3>
                 <p className="text-[#a8d8e8] leading-relaxed mb-6 text-sm md:text-base">
                   Comprehensive guides and troubleshooting articles for common issues

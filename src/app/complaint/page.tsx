@@ -2,7 +2,7 @@
 
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import { AlertTriangle, CheckCircle, Clock, Mail, Phone, FileText, ArrowRight, Shield, Users } from 'lucide-react'
+import { AlertTriangle, CheckCircle, Clock, Mail, Phone, FileText, ArrowRight, Shield, Users, Target } from 'lucide-react'
 import { useState } from 'react'
 
 export default function ComplaintPage() {
@@ -61,8 +61,8 @@ export default function ComplaintPage() {
                   Portal Complaint Form
                 </h1>
                 <p className="text-lg md:text-xl text-green-100 mb-12 max-w-2xl mx-auto leading-relaxed">
-                  Thank you for your feedback about our tracking portal. We will review your complaint within 24-48 hours.
-                  You will receive a confirmation email with your complaint reference number.
+                  Thank you for your feedback about our USPS tracking portal. We will review your complaint within 24–48 hours.
+                  You will receive a confirmation email with your complaint reference number and details.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <button 
@@ -110,36 +110,19 @@ export default function ComplaintPage() {
           <div className="absolute top-40 right-20 w-48 h-48 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
           <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white/5 rounded-full blur-xl animate-pulse delay-2000"></div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-            <div className="text-center">
-              <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-8 hover:scale-110 transition-transform duration-300">
-                <AlertTriangle className="h-12 w-12 text-white" />
-              </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                File a Portal Complaint
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div className="text-center animate-fade-in-up">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight animate-fade-in-up-delay-1">
+                File a Complaint
               </h1>
-              <p className="text-lg md:text-xl text-[#a8d8e8] mb-12 max-w-3xl mx-auto leading-relaxed">
-                We take all portal-related complaints seriously and will address your concerns promptly
+              <p className="text-base md:text-lg text-[#a8d8e8] mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
+                Report issues with USPS tracking, package delivery, or service quality through our official complaint portal for prompt resolution.
               </p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3">
-                  <Clock className="h-5 w-5" />
-                  <span className="font-semibold">24-48hr Response</span>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5" />
-                  <span className="font-semibold">Thorough Review</span>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3">
-                  <Mail className="h-5 w-5" />
-                  <span className="font-semibold">Email Updates</span>
-                </div>
-              </div>
             </div>
           </div>
 
           {/* Wave separator */}
-          <div className="absolute bottom-0 left-0 right-0">
+          <div className="absolute bottom-0 left-0 right-0 animate-wave">
             <svg className="w-full h-16" viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 32L48 37.3C96 43 192 53 288 53.3C384 53 480 43 576 42.7C672 43 768 53 864 58.7C960 64 1056 64 1152 58.7C1248 53 1344 43 1392 37.3L1440 32V64H1392C1344 64 1248 64 1152 64C1056 64 960 64 864 64C768 64 672 64 576 64C480 64 384 64 288 64C192 64 96 64 48 64H0V32Z" fill="currentColor" className="text-gray-50"/>
             </svg>
@@ -150,9 +133,9 @@ export default function ComplaintPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Enhanced Complaint Form */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12 relative overflow-hidden">
+              <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12 relative overflow-hidden animate-scale-in">
                 <div className="absolute top-4 right-4">
-                  <div className="bg-[#2E5288]/10 w-16 h-16 rounded-full flex items-center justify-center">
+                  <div className="bg-[#2E5288]/10 w-16 h-16 rounded-full flex items-center justify-center animate-rotate-slow">
                     <FileText className="h-8 w-8 text-[#2E5288]" />
                   </div>
                 </div>

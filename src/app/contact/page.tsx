@@ -48,30 +48,13 @@ export default function ContactPage() {
       <main className="flex-grow py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Enhanced Hero Section */}
-          <div className="text-center mb-16">
-            <div className="w-16 h-16 bg-[#e8f4fd] rounded-full flex items-center justify-center mx-auto mb-6">
-              <MessageCircle className="h-8 w-8 text-[#2E5288]" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <div className="text-center mb-12">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Get in Touch
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Have questions or feedback about our USPS tracking service? We're here to help you every step of the way
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <div className="bg-[#e8f4fd] px-4 py-2 rounded-full flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-[#2E5288]" />
-                <span className="font-semibold text-[#2E5288]">24hr Response</span>
-              </div>
-              <div className="bg-[#e8f4fd] px-4 py-2 rounded-full flex items-center gap-2">
-                <Clock className="h-4 w-4 text-[#2E5288]" />
-                <span className="font-semibold text-[#2E5288]">Expert Support</span>
-              </div>
-              <div className="bg-[#e8f4fd] px-4 py-2 rounded-full flex items-center gap-2">
-                <Mail className="h-4 w-4 text-[#2E5288]" />
-                <span className="font-semibold text-[#2E5288]">Free Service</span>
-              </div>
-            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -276,29 +259,29 @@ export default function ContactPage() {
           </div>
 
           {/* Support Hours */}
-          <section className="mt-16 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] rounded-2xl p-8 md:p-12 text-white">
+          <section className="mt-12 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] rounded-2xl p-6 md:p-8 text-white">
             <div className="text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              <h2 className="text-xl md:text-2xl font-bold mb-4">
                 Support Hours & Response Times
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 <div>
-                  <Clock className="h-8 w-8 mx-auto mb-3" />
-                  <h3 className="font-bold text-lg mb-2">Phone Support</h3>
-                  <p className="text-[#a8d8e8]">Mon-Fri, 9AM-6PM EST</p>
-                  <p className="text-white">Immediate response</p>
+                  <Clock className="h-6 w-6 mx-auto mb-2" />
+                  <h3 className="font-bold text-base mb-1">Phone Support</h3>
+                  <p className="text-[#a8d8e8] text-sm">Mon-Fri, 9AM-6PM EST</p>
+                  <p className="text-white text-sm">Immediate response</p>
                 </div>
                 <div>
-                  <Mail className="h-8 w-8 mx-auto mb-3" />
-                  <h3 className="font-bold text-lg mb-2">Email Support</h3>
-                  <p className="text-[#a8d8e8]">24/7 Available</p>
-                  <p className="text-white">Within 24 hours</p>
+                  <Mail className="h-6 w-6 mx-auto mb-2" />
+                  <h3 className="font-bold text-base mb-1">Email Support</h3>
+                  <p className="text-[#a8d8e8] text-sm">24/7 Available</p>
+                  <p className="text-white text-sm">Within 24 hours</p>
                 </div>
                 <div>
-                  <MessageCircle className="h-8 w-8 mx-auto mb-3" />
-                  <h3 className="font-bold text-lg mb-2">Live Chat</h3>
-                  <p className="text-[#a8d8e8]">24/7 Available</p>
-                  <p className="text-white">Under 2 minutes</p>
+                  <MessageCircle className="h-6 w-6 mx-auto mb-2" />
+                  <h3 className="font-bold text-base mb-1">Live Chat</h3>
+                  <p className="text-[#a8d8e8] text-sm">24/7 Available</p>
+                  <p className="text-white text-sm">Under 2 minutes</p>
                 </div>
               </div>
             </div>
