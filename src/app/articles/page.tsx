@@ -22,22 +22,19 @@ export default function ArticlesPage() {
   const [categories, setCategories] = useState<string[]>(['All']);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const articlesPerPage = 9; // 3x3 grid
+  const articlesPerPage = 6; // Changed from 9 to 6
 
   useEffect(() => {
-    const loadArticles = async () => {
+    const fetchArticles = async () => {
       try {
-        // In a real implementation, this would call the API endpoint
-        // For now, we'll simulate the data structure
-        const response = await fetch('/api/articles');
-        const articlesData = await response.json();
-        
-        setArticles(articlesData);
-        
-        // Extract unique categories
-        const uniqueCategories = ['All', ...new Set(articlesData.map((article: any) => article.category))];
-        setCategories(uniqueCategories as string[]);
+        const response = await fetch('/api/articles-embedded');
+        if (!response.ok) {
+          throw new Error('Failed to fetch articles');
+        }
+        const data = await response.json();
+        setArticles(data);
       } catch (error) {
+        console.error('Error fetching articles:', error);
         console.error('Error loading articles:', error);
         // Fallback to sample data if API fails
         setArticles([
@@ -51,7 +48,7 @@ export default function ArticlesPage() {
       }
     };
 
-    loadArticles();
+    fetchArticles();
   }, []);
 
   const filteredArticles = useMemo(() => {
