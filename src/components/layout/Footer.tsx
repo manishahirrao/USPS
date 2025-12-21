@@ -17,30 +17,11 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center mb-6 group">
-              <div className="relative">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#2E5288] to-[#1e3a6f] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                  <Package className="h-5 w-5 md:h-6 md:w-6 text-white" />
-                </div>
-                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              </div>
-              <span className="text-xl md:text-2xl font-bold group-hover:text-[#a8d8e8] transition-colors">USPS Portal</span>
+              <span className="text-xl md:text-2xl font-bold group-hover:text-[#a8d8e8] transition-colors">USPS Tracking Number</span>
             </Link>
             <p className="text-gray-400 mb-6 text-sm md:text-base leading-relaxed">
-              Your convenient gateway to official USPS tracking with instant access and streamlined user experience.
+              Third-party service helping you track USPS packages by navigating to official USPS tracking pages.
             </p>
-            
-            {/* Social Links */}
-            <div className="flex gap-3">
-              <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 cursor-pointer hover:scale-110">
-                <Mail className="h-4 w-4 text-gray-300" />
-              </div>
-              <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 cursor-pointer hover:scale-110">
-                <Phone className="h-4 w-4 text-gray-300" />
-              </div>
-              <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 cursor-pointer hover:scale-110">
-                <MapPin className="h-4 w-4 text-gray-300" />
-              </div>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -51,27 +32,15 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
+                <Link href="/" className="text-gray-400 hover:text-white transition-all duration-300 text-sm md:text-base flex items-center gap-2 group">
+                  <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="group-hover:translate-x-1 transition-transform">Home</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="text-gray-400 hover:text-white transition-all duration-300 text-sm md:text-base flex items-center gap-2 group">
                   <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="group-hover:translate-x-1 transition-transform">About Portal</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/support" className="text-gray-400 hover:text-white transition-all duration-300 text-sm md:text-base flex items-center gap-2 group">
-                  <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="group-hover:translate-x-1 transition-transform">Support</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/complaint" className="text-gray-400 hover:text-white transition-all duration-300 text-sm md:text-base flex items-center gap-2 group">
-                  <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="group-hover:translate-x-1 transition-transform">File Complaint</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/donation" className="text-gray-400 hover:text-white transition-all duration-300 text-sm md:text-base flex items-center gap-2 group">
-                  <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="group-hover:translate-x-1 transition-transform">Support Portal</span>
+                  <span className="group-hover:translate-x-1 transition-transform">About Us</span>
                 </Link>
               </li>
             </ul>
@@ -101,18 +70,6 @@ export default function Footer() {
                   <span className="group-hover:translate-x-1 transition-transform">Official USPS</span>
                 </a>
               </li>
-              <li>
-                <Link href="/tracking-api" className="text-gray-400 hover:text-white transition-all duration-300 text-sm md:text-base flex items-center gap-2 group">
-                  <Shield className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="group-hover:translate-x-1 transition-transform">API Access</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/business" className="text-gray-400 hover:text-white transition-all duration-300 text-sm md:text-base flex items-center gap-2 group">
-                  <Package className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="group-hover:translate-x-1 transition-transform">Business Solutions</span>
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -136,15 +93,21 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/cookies" className="text-gray-400 hover:text-white transition-all duration-300 text-sm md:text-base flex items-center gap-2 group">
+                  <Package className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="group-hover:translate-x-1 transition-transform">Cookie Policy</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/gdpr" className="text-gray-400 hover:text-white transition-all duration-300 text-sm md:text-base flex items-center gap-2 group">
                   <Shield className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <span className="group-hover:translate-x-1 transition-transform">GDPR Compliance</span>
                 </Link>
               </li>
               <li>
-                <Link href="/sitemap" className="text-gray-400 hover:text-white transition-all duration-300 text-sm md:text-base flex items-center gap-2 group">
-                  <Package className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="group-hover:translate-x-1 transition-transform">Sitemap</span>
+                <Link href="/disclaimer" className="text-gray-400 hover:text-white transition-all duration-300 text-sm md:text-base flex items-center gap-2 group">
+                  <MapPin className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="group-hover:translate-x-1 transition-transform">Disclaimer</span>
                 </Link>
               </li>
             </ul>
@@ -156,18 +119,11 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex flex-col md:flex-row items-center gap-4">
               <p className="text-gray-400 text-sm">
-                © 2024 USPS Portal. All rights reserved.
+                © {new Date().getFullYear()} USPS Tracking Number. All rights reserved.
               </p>
               <div className="flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="text-xs text-gray-300">Third-Party Service</span>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-6">
-              <div className="text-center">
-                <p className="text-gray-400 text-xs mb-1">Powered by</p>
-                <p className="text-gray-300 text-sm font-semibold">Advanced Tracking Solutions</p>
               </div>
             </div>
           </div>

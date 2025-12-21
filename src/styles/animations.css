@@ -34,6 +34,16 @@
   }
 }
 
+/* Horizontal scroll animation for testimonials */
+@keyframes scrollHorizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* FAQ item animations */
 @keyframes expandOpen {
   from {
@@ -74,6 +84,11 @@
 .faq-item:nth-child(3) { animation-delay: 0.3s; }
 .faq-item:nth-child(4) { animation-delay: 0.4s; }
 .faq-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Horizontal scroll animation */
+.animate-scroll-horizontal {
+  animation: scrollHorizontal 20s linear infinite;
+}
 
 /* Smooth scroll behavior */
 html {

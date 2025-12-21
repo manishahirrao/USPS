@@ -1,0 +1,4 @@
+google.com, pub-2447170388530049, DIRECT, f08c47fec0942fa0
+
+# For Google AdSense verification
+# This file verifies that this domain is authorized to show Google ads

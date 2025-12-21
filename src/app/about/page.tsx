@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
+import Link from 'next/link'
 import { Package, Users, Target, Shield, Award, Clock, CheckCircle, TrendingUp, Globe, Zap, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -11,12 +10,9 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex flex-col">
-      <Header />
-      
-      <main className="flex-grow">
-        {/* Enhanced Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#2E5288] via-[#1e3a6f] to-[#15223e] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Enhanced Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#2E5288] via-[#1e3a6f] to-[#15223e] text-white">
           <div className="absolute inset-0 bg-black opacity-10"></div>
           {/* Animated background elements */}
           <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
@@ -199,7 +195,7 @@ export default function AboutPage() {
                 What We Offer
               </h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive USPS tracking features designed for your convenience and peace of mind.
+                A convenient portal that provides quick access to official USPS tracking with your tracking number pre-filled.
               </p>
             </div>
             
@@ -207,83 +203,27 @@ export default function AboutPage() {
               <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] w-14 h-14 rounded-xl flex items-center justify-center">
-                    <Clock className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900">
-                    Real-Time Tracking
-                  </h3>
-                </div>
-                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
-                  Get live updates on your USPS package location and status as it moves through the USPS network.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm md:text-base">Instant location updates</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm md:text-base">Delivery notifications</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm md:text-base">Status changes</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] w-14 h-14 rounded-xl flex items-center justify-center">
                     <Target className="h-7 w-7 text-white" />
                   </div>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900">
-                    Smart Estimates
+                    Quick Navigation
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
-                  Receive accurate delivery date predictions and time windows for your shipments
+                  Enter your tracking number and we'll instantly navigate you to the official USPS tracking page.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm md:text-base">AI-powered predictions</span>
+                    <span className="text-gray-700 text-sm md:text-base">Pre-filled tracking number</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm md:text-base">Time-sensitive updates</span>
+                    <span className="text-gray-700 text-sm md:text-base">Direct USPS access</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">Historical accuracy</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] w-14 h-14 rounded-xl flex items-center justify-center">
-                    <Package className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900">
-                    Complete History
-                  </h3>
-                </div>
-                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
-                  View detailed tracking history from pickup to final delivery
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm md:text-base">Event timestamps</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm md:text-base">Location details</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm md:text-base">Delivery confirmations</span>
+                    <span className="text-gray-700 text-sm md:text-base">Instant redirection</span>
                   </li>
                 </ul>
               </div>
@@ -294,20 +234,76 @@ export default function AboutPage() {
                     <Shield className="h-7 w-7 text-white" />
                   </div>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900">
-                    Free Service
+                    Official USPS Data
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
-                  All tracking features are available at no cost with no hidden fees
+                  Get accurate tracking information directly from the official USPS tracking system.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm md:text-base">Unlimited tracking</span>
+                    <span className="text-gray-700 text-sm md:text-base">Authentic USPS data</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm md:text-base">No registration required</span>
+                    <span className="text-gray-700 text-sm md:text-base">Real-time updates</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm md:text-base">Official tracking status</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] w-14 h-14 rounded-xl flex items-center justify-center">
+                    <Zap className="h-7 w-7 text-white" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900">
+                    Time-Saving Portal
+                  </h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
+                  Skip the hassle of navigating through the USPS website - we get you there instantly.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm md:text-base">One-click access</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm md:text-base">No navigation needed</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm md:text-base">Instant results</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] w-14 h-14 rounded-xl flex items-center justify-center">
+                    <Users className="h-7 w-7 text-white" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900">
+                    Free & Simple
+                  </h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6">
+                  Our portal is completely free with no registration required - just enter and track.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm md:text-base">No registration needed</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm md:text-base">No hidden fees</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
@@ -331,18 +327,12 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up-delay-1">
-              <button className="bg-white text-[#2E5288] px-8 py-3 rounded-xl font-bold text-base hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl">
+              <Link href="/" className="bg-white text-[#2E5288] px-8 py-3 rounded-xl font-bold text-base hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl inline-block text-center">
                 Start Tracking Now
-              </button>
-              <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-xl font-bold text-base hover:bg-white hover:text-[#2E5288] transition-all duration-300 hover:scale-105">
-                Learn More
-              </button>
+              </Link>
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
     </div>
   )
 }

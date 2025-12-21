@@ -91,8 +91,8 @@ export default function TrackingForm() {
     setCurrentMessage('')
 
     try {
-      // Simulate processing with progress bar for 6-7 seconds
-      const totalTime = 6500 // 6.5 seconds
+      // Simulate processing with progress bar for 20 seconds
+      const totalTime = 20000 // 20 seconds
       const intervalTime = 100
       const steps = totalTime / intervalTime
       const messageInterval = steps / processingMessages.length

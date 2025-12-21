@@ -21,15 +21,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#2E5288] to-[#1e3a6f] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <Package className="h-5 w-5 md:h-6 md:w-6 text-white" />
-              </div>
-              <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            </div>
             <div className="flex flex-col justify-center leading-tight">
               <span className="text-xl md:text-2xl font-extrabold text-gray-900 group-hover:text-[#2E5288] transition-colors">USPS</span>
-              <span className="text-sm md:text-base font-semibold text-gray-600 group-hover:text-[#1e3a6f] transition-colors">Tracking</span>
+              <span className="text-sm md:text-base font-semibold text-gray-600 group-hover:text-[#1e3a6f] transition-colors">Tracking Number</span>
             </div>
           </Link>
 
@@ -53,36 +47,6 @@ export default function Header() {
               }`}
             >
               About Us
-            </Link>
-            <Link 
-              href="/support" 
-              className={`px-4 xl:px-5 py-2 font-medium transition-all duration-200 text-sm xl:text-base rounded-full ${
-                isActive('/support') 
-                  ? 'bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white hover:from-[#1e3a6f] hover:to-[#15223e] hover:shadow-lg' 
-                  : 'text-gray-700 hover:text-[#2E5288] hover:bg-blue-50'
-              }`}
-            >
-              Support
-            </Link>
-            <Link 
-              href="/donation" 
-              className={`px-4 xl:px-5 py-2 font-medium transition-all duration-200 text-sm xl:text-base rounded-full ${
-                isActive('/donation') 
-                  ? 'bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white hover:from-[#1e3a6f] hover:to-[#15223e] hover:shadow-lg' 
-                  : 'text-gray-700 hover:text-[#2E5288] hover:bg-blue-50'
-              }`}
-            >
-              Donation
-            </Link>
-            <Link 
-              href="/complaint" 
-              className={`px-4 xl:px-5 py-2 font-medium transition-all duration-200 text-sm xl:text-base rounded-full ${
-                isActive('/complaint') 
-                  ? 'bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white hover:from-[#1e3a6f] hover:to-[#15223e] hover:shadow-lg' 
-                  : 'text-gray-700 hover:text-[#2E5288] hover:bg-blue-50'
-              }`}
-            >
-              Complaint
             </Link>
             <Link 
               href="/articles" 
@@ -136,39 +100,6 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
-              </Link>
-              <Link
-                href="/support"
-                className={`px-4 py-3 font-medium text-sm transition-all duration-200 rounded-xl ${
-                  isActive('/support') 
-                    ? 'bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white hover:from-[#1e3a6f] hover:to-[#15223e]' 
-                    : 'hover:bg-blue-50 text-gray-700 hover:text-[#2E5288]'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Support
-              </Link>
-              <Link
-                href="/donation"
-                className={`px-4 py-3 font-medium text-sm transition-all duration-200 rounded-xl ${
-                  isActive('/donation') 
-                    ? 'bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white hover:from-[#1e3a6f] hover:to-[#15223e]' 
-                    : 'hover:bg-blue-50 text-gray-700 hover:text-[#2E5288]'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Donation
-              </Link>
-              <Link
-                href="/complaint"
-                className={`px-4 py-3 font-medium text-sm transition-all duration-200 rounded-xl ${
-                  isActive('/complaint') 
-                    ? 'bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] text-white hover:from-[#1e3a6f] hover:to-[#15223e]' 
-                    : 'hover:bg-blue-50 text-gray-700 hover:text-[#2E5288]'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Complaint
               </Link>
               <Link
                 href="/articles"

@@ -1,38 +1,31 @@
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
 import { Shield, Lock, Eye, Database, Cookie, Users, AlertCircle, CheckCircle, Target } from 'lucide-react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | USPS Tracking Number",
+  description: "Privacy policy for USPS Tracking Number. Learn how our third-party USPS tracking service protects your privacy while helping you track packages.",
+  keywords: "privacy policy, USPS tracking privacy, data protection, third-party service, user privacy, tracking information",
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex flex-col">
-      <Header />
-      
-      <main className="flex-grow py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Enhanced Hero Section */}
-          <section className="relative overflow-hidden bg-gradient-to-br from-[#2E5288] via-[#1e3a6f] to-[#15223e] text-white">
-            <div className="absolute inset-0 bg-black opacity-10"></div>
-            {/* Animated background elements */}
-            <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
-            <div className="absolute top-40 right-20 w-48 h-48 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
-            <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white/5 rounded-full blur-xl animate-pulse delay-2000"></div>
-            
+    <div className="py-16 bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Hero Section - White Background */}
+          <section className="relative bg-white text-gray-900 border-b border-gray-200">
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
               <div className="text-center animate-fade-in-up">
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight animate-fade-in-up-delay-1">
                   Privacy Policy
                 </h1>
-                <p className="text-base md:text-lg text-[#a8d8e8] mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
-                  Learn how we protect your privacy and handle your data when using our USPS tracking portal.
+                <p className="text-base md:text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
+                  Our third-party USPS tracking service helps you track packages by navigating to official USPS pages. Learn how we protect your privacy.
                 </p>
               </div>
-            </div>
-
-            {/* Wave separator */}
-            <div className="absolute bottom-0 left-0 right-0 animate-wave">
-              <svg className="w-full h-16" viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 32L48 37.3C96 43 192 53 288 53.3C384 53 480 43 576 42.7C672 43 768 53 864 58.7C960 64 1056 64 1152 58.7C1248 53 1344 43 1392 37.3L1440 32V64H1392C1344 64 1248 64 1152 64C1056 64 960 64 864 64C768 64 672 64 576 64C480 64 384 64 288 64C192 64 96 64 48 64H0V32Z" fill="currentColor" className="text-gray-50"/>
-              </svg>
             </div>
           </section>
 
@@ -48,7 +41,7 @@ export default function PrivacyPage() {
                 </h2>
               </div>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                When you use our USPS tracking service, we collect minimal information necessary to provide the best experience:
+                As a third-party service, we help you track USPS packages by redirecting to official USPS tracking pages. We collect minimal information:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-gray-50 p-4 rounded-lg">
@@ -219,40 +212,8 @@ export default function PrivacyPage() {
               </div>
             </section>
 
-            {/* Contact */}
-            <section className="bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] p-6 rounded-xl text-white">
-              <h2 className="text-xl md:text-2xl font-bold mb-4">Privacy Questions?</h2>
-              <p className="text-[#a8d8e8] mb-4">
-                If you have questions about this privacy policy or need to exercise your rights, we're here to help.
-              </p>
-              <div className="bg-white/20 backdrop-blur-sm p-4 rounded-lg">
-                <div className="space-y-2">
-                  <p className="flex items-center gap-3">
-                    <span className="font-semibold">Email:</span>
-                    <span>privacy@uspstracking.us</span>
-                  </p>
-                  <p className="flex items-center gap-3">
-                    <span className="font-semibold">Phone:</span>
-                    <span>1-800-TRACK-US</span>
-                  </p>
-                  <p className="flex items-center gap-3">
-                    <span className="font-semibold">Response Time:</span>
-                    <span>Within 24 hours</span>
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <div className="border-t pt-8 text-center">
-              <p className="text-gray-500">
-                Last Updated: December 18, 2024 • Effective Date: December 18, 2024
-              </p>
             </div>
-          </div>
         </div>
-      </main>
-
-      <Footer />
     </div>
   )
 }

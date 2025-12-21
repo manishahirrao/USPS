@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Poppins, Roboto } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,22 +22,22 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Track USPS Packages by Tracking Number Online | Free USPS Tracking Tool",
+  title: "USPS Tracking Number - Track USPS Packages Online | Free Tracking Tool",
   description: "Track your USPS package with your USPS Tracking Number or USPS Tracking Code. Get real-time delivery updates, shipment status, and instant notifications using our quick and accurate USPS tracking tool. Enter your tracking number to check package status, delivery date, location, and movement history — fast, reliable, and always up-to-date.",
-  keywords: "USPS Tracking Number, USPS Tracking Code, Track USPS Packages by Tracking Number Online, USPS Tracking Code Lookup, Real-Time Package Updates, Enter USPS Tracking Number, Track Shipment Now, Free USPS Tracking Tool, Check Delivery Status, USPS Tracking Made Easy, Use Tracking Code Here, Track Your USPS Shipment, Instant Status Updates, Check USPS Package Status by Tracking Number",
-  authors: [{ name: "USPS Tracking" }],
-  creator: "USPS Tracking",
-  publisher: "USPS Tracking",
-  metadataBase: new URL("https://uspstracking.us"),
+  keywords: "usps tracking, usps, usps tracking number, usps near me, USPS Tracking Number, USPS Tracking Code, Track USPS Packages by Tracking Number Online, USPS Tracking Code Lookup, Real-Time Package Updates, Enter USPS Tracking Number, Track Shipment Now, Free USPS Tracking Tool, Check Delivery Status, USPS Tracking Made Easy, Use Tracking Code Here, Track Your USPS Shipment, Instant Status Updates, Check USPS Package Status by Tracking Number",
+  authors: [{ name: "USPS Tracking Number" }],
+  creator: "USPS Tracking Number",
+  publisher: "USPS Tracking Number",
+  metadataBase: new URL("https://uspstrackingnumber.online"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Track USPS Packages by Tracking Number Online | Free USPS Tracking Tool",
+    title: "USPS Tracking Number - Track USPS Packages Online | Free Tracking Tool",
     description: "Track your USPS package with your USPS Tracking Number or USPS Tracking Code. Get real-time delivery updates, shipment status, and instant notifications using our quick and accurate USPS tracking tool.",
     type: "website",
-    url: "https://uspstracking.us",
-    siteName: "USPS Tracking",
+    url: "https://uspstrackingnumber.online",
+    siteName: "USPS Tracking Number",
   },
   twitter: {
     card: "summary_large_image",
@@ -60,8 +62,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "USPS Tracking Number",
+    "url": "https://uspstrackingnumber.online",
+    "description": "Track your USPS package with your USPS Tracking Number or USPS Tracking Code. Get real-time delivery updates, shipment status, and instant notifications using our quick and accurate USPS tracking tool.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://uspstrackingnumber.online/?tracking={tracking_number}",
+      "query-input": "required name=tracking_number"
+    },
+    "sameAs": [
+      "https://www.facebook.com/USPS",
+      "https://twitter.com/USPS"
+    ]
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${poppins.variable} ${roboto.variable} font-sans antialiased`}
       >
@@ -84,7 +109,9 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        {children}
+        <Header />
+        <main>{children}</main>
+        <Footer />
         <script
           dangerouslySetInnerHTML={{
             __html: `

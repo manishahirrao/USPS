@@ -1,17 +1,14 @@
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
 import TrackingForm from '@/components/tracking/TrackingForm'
+import TestimonialsCarousel from '@/components/testimonials/TestimonialsCarousel'
+import Link from 'next/link'
 import { Search, Truck, Shield, Clock, Package, ArrowRight, Zap, Globe, Users, TrendingUp, Star, ExternalLink, CheckCircle, Target, Bell, MapPin } from 'lucide-react'
 import '@/styles/animations.css'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex flex-col">
-      <Header />
-      
-      <main className="flex-grow">
-        {/* Enhanced Hero Section with Integrated Tracking */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#2E5288] via-[#1e3a6f] to-[#15223e] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Enhanced Hero Section with Integrated Tracking */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#2E5288] via-[#1e3a6f] to-[#15223e] text-white">
           <div className="absolute inset-0 bg-black opacity-10"></div>
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
@@ -84,36 +81,36 @@ export default function Home() {
                 <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                   <Search className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Instant Search</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Quick Navigation</h3>
                 <p className="text-gray-600 text-sm">
-                  Enter your USPS tracking number and get immediate results from our tracking portal
+                  Enter your USPS tracking number and we'll instantly navigate you to the official USPS tracking page
                 </p>
               </div>
               <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-slide-in-left" style={{ animationDelay: '0.1s' }}>
                 <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                  <Clock className="h-6 w-6 text-white" />
+                  <Truck className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Real-time Updates</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Official USPS Access</h3>
                 <p className="text-gray-600 text-sm">
-                  Get live tracking information as your package moves through the USPS network
+                  Get direct access to the official USPS website with your tracking number pre-filled for convenience
                 </p>
               </div>
               <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-slide-in-right" style={{ animationDelay: '0.2s' }}>
                 <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                  <MapPin className="h-6 w-6 text-white" />
+                  <Target className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Location Tracking</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Accurate Tracking</h3>
                 <p className="text-gray-600 text-sm">
-                  See exactly where your package is in the delivery process with detailed location data
+                  Receive precise tracking information directly from the official USPS tracking system
                 </p>
               </div>
               <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
                 <div className="bg-[#2E5288] w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                  <Bell className="h-6 w-6 text-white" />
+                  <Zap className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Delivery Alerts</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Fast & Free</h3>
                 <p className="text-gray-600 text-sm">
-                  Receive notifications when your package is out for delivery or has been delivered
+                  Save time with our convenient portal that gets you to official USPS tracking instantly and for free
                 </p>
               </div>
             </div>
@@ -143,7 +140,11 @@ export default function Home() {
                 <p className="text-gray-600 text-center leading-relaxed">
                   Input your USPS tracking number in our convenient tracking form
                 </p>
-                <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gray-300"></div>
+                <div className="hidden md:block absolute top-8 left-full w-24 flex items-center justify-center z-10">
+                  <svg className="w-full h-4" viewBox="0 0 100 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 8 L80 8 M70 3 L80 8 L70 13" stroke="#D1D5DB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
               </div>
 
               <div className="relative animate-scale-in" style={{ animationDelay: '0.2s' }}>
@@ -156,7 +157,11 @@ export default function Home() {
                 <p className="text-gray-600 text-center leading-relaxed">
                   We instantly redirect you to the official USPS tracking page with your number pre-filled
                 </p>
-                <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gray-300"></div>
+                <div className="hidden md:block absolute top-8 left-full w-24 flex items-center justify-center z-10">
+                  <svg className="w-full h-4" viewBox="0 0 100 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 8 L80 8 M70 3 L80 8 L70 13" stroke="#D1D5DB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
               </div>
 
               <div className="relative">
@@ -175,101 +180,7 @@ export default function Home() {
         </section>
 
         {/* Enhanced Testimonials Section */}
-        <section className="py-20 bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                What Our Users Say
-              </h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                See why users choose our USPS tracking portal to reach official USPS tracking information faster and with less effort.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 testimonial-card relative overflow-hidden">
-                <div className="absolute top-4 right-4">
-                  <div className="bg-[#2E5288]/10 w-12 h-12 rounded-full flex items-center justify-center">
-                    <Star className="h-6 w-6 text-[#2E5288]" />
-                  </div>
-                </div>
-                <div className="flex items-center mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] rounded-full flex items-center justify-center text-white font-bold text-lg">
-                    JD
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-bold text-gray-900 text-base md:text-lg">John Davis</h3>
-                    <div className="flex text-yellow-400">
-                      {[1,2,3,4,5].map((star) => (
-                        <Star key={star} className="w-4 h-4 fill-current" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  "This portal makes tracking so convenient! I love how it takes me straight to the official USPS page with my tracking number already filled in."
-                </p>
-                <div className="text-sm text-gray-500 font-medium">
-                  Small Business Owner • California
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 testimonial-card relative overflow-hidden">
-                <div className="absolute top-4 right-4">
-                  <div className="bg-[#2E5288]/10 w-12 h-12 rounded-full flex items-center justify-center">
-                    <Star className="h-6 w-6 text-[#2E5288]" />
-                  </div>
-                </div>
-                <div className="flex items-center mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] rounded-full flex items-center justify-center text-white font-bold text-lg">
-                    SM
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-bold text-gray-900 text-base md:text-lg">Sarah Miller</h3>
-                    <div className="flex text-yellow-400">
-                      {[1,2,3,4,5].map((star) => (
-                        <Star key={star} className="w-4 h-4 fill-current" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  "Such a time-saver! Instead of navigating through the USPS website, I just enter my number here and get straight to the tracking results."
-                </p>
-                <div className="text-sm text-gray-500 font-medium">
-                  E-commerce Manager • New York
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 testimonial-card relative overflow-hidden">
-                <div className="absolute top-4 right-4">
-                  <div className="bg-[#2E5288]/10 w-12 h-12 rounded-full flex items-center justify-center">
-                    <Star className="h-6 w-6 text-[#2E5288]" />
-                  </div>
-                </div>
-                <div className="flex items-center mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-r from-[#2E5288] to-[#1e3a6f] rounded-full flex items-center justify-center text-white font-bold text-lg">
-                    RJ
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-bold text-gray-900 text-base md:text-lg">Robert Johnson</h3>
-                    <div className="flex text-yellow-400">
-                      {[1,2,3,4,5].map((star) => (
-                        <Star key={star} className="w-4 h-4 fill-current" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  "Simple and effective! I appreciate that it's transparent about being a third-party service and gets me to the official USPS tracking page quickly."
-                </p>
-                <div className="text-sm text-gray-500 font-medium">
-                  Freelancer • Texas
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <TestimonialsCarousel />
 
         {/* Enhanced FAQ Section */}
         <section className="py-20 bg-gradient-to-r from-[#e8f4fd] to-[#d1e9ff]">
@@ -394,12 +305,9 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up-delay-1">
-              <button className="bg-white text-[#2E5288] px-8 py-3 rounded-xl font-bold text-base hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl">
+              <Link href="#tracking" className="bg-white text-[#2E5288] px-8 py-3 rounded-xl font-bold text-base hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl inline-block text-center">
                 Track Package
-              </button>
-              <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-xl font-bold text-base hover:bg-white hover:text-[#2E5288] transition-all duration-300 hover:scale-105">
-                Learn More
-              </button>
+              </Link>
             </div>
             
             {/* Trust indicators */}
@@ -419,9 +327,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
     </div>
   )
 }
