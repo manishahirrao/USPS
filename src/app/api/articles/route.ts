@@ -1,35 +1,9 @@
 import { NextResponse } from 'next/server';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
-// Embedded article data
-const ARTICLE_DATA = `URL : https://USPStrackingnumber.online/Does-USPS-Deliver-On-Sunday-?
-Title : Does USPS Deliver On Sunday? 
-Yes, USPS does offer limited Sunday delivery, but it's not available for all types of mail. Here's what you need to know:
-________________________________________
-✅ When Does USPS Deliver on Sundays?
-1.	Priority Mail Express
-2.	Amazon Packages
-________________________________________
-❌ When USPS Does Not Deliver on Sundays
-•	First-Class Mail, USPS Ground Advantage, Media Mail, and standard Priority Mail (non-express) are not delivered on Sundays.
-
-URL : https://uspstrackingnumber.online/ Does-USPS-Deliver-On-Saturday
-Title : Does USPS Deliver On Saturday ?
-Yes, USPS does deliver on Saturdays. In fact, Saturday delivery is a standard part of USPS operations, and most residential and commercial addresses in the U.S. receive mail six days a week—Monday through Saturday.
-________________________________________
-✅ What USPS Delivers on Saturdays
-1.	First-Class Mail
-2.	Priority Mail & Priority Mail Express
-3.	USPS Ground Advantage
-4.	Amazon Packages (via USPS)
-
-URL : https://USPStrackingNumber.Online/what-time-does-USPS-deliver?
-Title : What Time Does USPS Deliver ?
-USPS delivery times can vary depending on the mail class, location, and delivery volume for that day. However, USPS typically delivers mail between 9:00 a.m. and 5:00 p.m., Monday through Saturday.
-________________________________________
-🕒 General USPS Delivery Hours
-•	Residential Areas: 9:00 a.m. to 5:00 p.m.
-•	Business Addresses: Usually by 3:00–4:00 p.m.
-•	Sundays: 10:30 a.m. to 6:30 p.m. (limited services only)`;
+// Read article data from file
+const ARTICLE_DATA = readFileSync(join(process.cwd(), 'src/app/api/articles-full.txt'), 'utf-8');
 
 export async function GET() {
   try {
@@ -116,6 +90,9 @@ function formatArticleContent(content: string, currentTitle: string): string {
     return `<ul class="list-disc pl-6 my-4 space-y-2 text-gray-800">${match}</ul>\n`;
   });
   
+  // Add keyword interlinking before converting paragraphs
+  formatted = addKeywordInterlinking(formatted, currentTitle);
+  
   // Convert paragraphs (text blocks separated by double newlines)
   const paragraphs = formatted.split('\n\n').map(para => {
     const trimmed = para.trim();
@@ -127,6 +104,60 @@ function formatArticleContent(content: string, currentTitle: string): string {
   }).join('\n\n');
   
   return paragraphs;
+}
+
+function addKeywordInterlinking(content: string, currentTitle: string): string {
+  // Define keyword mappings to articles and home page
+  const keywordMappings = [
+    // Home page links for common USPS terms
+    { keyword: 'USPS tracking', url: '/', type: 'home' },
+    { keyword: 'tracking number', url: '/', type: 'home' },
+    { keyword: 'track package', url: '/', type: 'home' },
+    { keyword: 'package tracking', url: '/', type: 'home' },
+    
+    // Article interlinks
+    { keyword: 'deliver on sunday', url: '/articles/does-usps-deliver-on-sunday', type: 'article' },
+    { keyword: 'deliver on saturday', url: '/articles/does-usps-deliver-on-saturday', type: 'article' },
+    { keyword: 'delivery time', url: '/articles/what-time-does-usps-deliver', type: 'article' },
+    { keyword: 'late delivery', url: '/articles/how-late-does-usps-deliver', type: 'article' },
+    { keyword: 'change address', url: '/articles/how-to-change-address-usps', type: 'article' },
+    
+    // Service-related links to home page
+    { keyword: 'priority mail', url: '/', type: 'home' },
+    { keyword: 'first class mail', url: '/', type: 'home' },
+    { keyword: 'informed delivery', url: '/', type: 'home' },
+    { keyword: 'hold mail', url: '/', type: 'home' },
+    { keyword: 'mail forwarding', url: '/', type: 'home' },
+  ];
+  
+  let linkedContent = content;
+  
+  // Apply keyword linking (case-insensitive, whole word matching)
+  keywordMappings.forEach(({ keyword, url, type }) => {
+    // Skip if linking to the same article
+    if (type === 'article' && currentTitle.toLowerCase().includes(keyword.toLowerCase())) {
+      return;
+    }
+    
+    // Create regex for case-insensitive whole word matching
+    const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
+    
+    // Replace keyword with linked version (limit to first occurrence to avoid over-linking)
+    let replaced = false;
+    linkedContent = linkedContent.replace(regex, (match) => {
+      if (!replaced) {
+        replaced = true;
+        const linkClass = type === 'home' 
+          ? 'text-[#2E5288] hover:text-[#1e3a6f] font-medium underline decoration-2 underline-offset-2 hover:decoration-[#2E5288] transition-colors'
+          : 'text-[#2E5288] hover:text-[#1e3a6f] font-medium underline decoration-2 underline-offset-2 hover:decoration-[#2E5288] transition-colors';
+        
+        return `<a href="${url}" class="${linkClass}">${match}</a>`;
+      }
+      return match;
+    });
+  });
+  
+  return linkedContent;
 }
 
 function parseArticleContent(section: string): string {

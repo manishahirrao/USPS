@@ -17,7 +17,7 @@ export default function CookiesPage() {
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight animate-fade-in-up-delay-1">
                   Cookie Policy
                 </h1>
-                <p className="text-base md:text-lg text-[#a8d8e8] mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
+                <p className="text-base md:text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
                   Our third-party USPS tracking service uses minimal cookies to enhance your experience while respecting your privacy.
                 </p>
               </div>
