@@ -1,20 +1,40 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+
+// Embedded article data
+const ARTICLE_DATA = `URL : https://USPStrackingnumber.online/Does-USPS-Deliver-On-Sunday-?
+Title : Does USPS Deliver On Sunday? 
+Yes, USPS does offer limited Sunday delivery, but it's not available for all types of mail. Here's what you need to know:
+________________________________________
+✅ When Does USPS Deliver on Sundays?
+1.	Priority Mail Express
+2.	Amazon Packages
+________________________________________
+❌ When USPS Does Not Deliver on Sundays
+•	First-Class Mail, USPS Ground Advantage, Media Mail, and standard Priority Mail (non-express) are not delivered on Sundays.
+
+URL : https://uspstrackingnumber.online/ Does-USPS-Deliver-On-Saturday
+Title : Does USPS Deliver On Saturday ?
+Yes, USPS does deliver on Saturdays. In fact, Saturday delivery is a standard part of USPS operations, and most residential and commercial addresses in the U.S. receive mail six days a week—Monday through Saturday.
+________________________________________
+✅ What USPS Delivers on Saturdays
+1.	First-Class Mail
+2.	Priority Mail & Priority Mail Express
+3.	USPS Ground Advantage
+4.	Amazon Packages (via USPS)
+
+URL : https://USPStrackingNumber.Online/what-time-does-USPS-deliver?
+Title : What Time Does USPS Deliver ?
+USPS delivery times can vary depending on the mail class, location, and delivery volume for that day. However, USPS typically delivers mail between 9:00 a.m. and 5:00 p.m., Monday through Saturday.
+________________________________________
+🕒 General USPS Delivery Hours
+•	Residential Areas: 9:00 a.m. to 5:00 p.m.
+•	Business Addresses: Usually by 3:00–4:00 p.m.
+•	Sundays: 10:30 a.m. to 6:30 p.m. (limited services only)`;
 
 export async function GET() {
   try {
-    // Read the article file from the correct path
-    const filePath = 'C:/Users/manis/OneDrive/Desktop/USPS/article';
-    
-    if (!fs.existsSync(filePath)) {
-      return NextResponse.json({ error: 'Article file not found' }, { status: 404 });
-    }
-
-    const data = fs.readFileSync(filePath, 'utf8');
-    
-    // Split the file into individual articles
-    const articleSections = data.split(/_{5,}/);
+    // Split the article data into individual articles
+    const articleSections = ARTICLE_DATA.split(/_{5,}/);
     
     const articles: any[] = [];
     
@@ -32,10 +52,10 @@ export async function GET() {
         // Create a slug from the title
         const slug = title
           .toLowerCase()
-          .replace(/[^\w\s-]/g, '') // Remove special characters
-          .replace(/\s+/g, '-') // Replace spaces with hyphens
-          .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
-          .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-')
+          .replace(/^-+|-+$/g, '');
         
         // Create excerpt (first 150 characters of content, stripped of HTML/markdown)
         const plainText = content.replace(/<[^>]*>?/gm, '').replace(/[#*]/g, '').trim();
@@ -51,9 +71,6 @@ export async function GET() {
         else if (title.toLowerCase().includes('track')) category = 'Tracking';
         else if (title.toLowerCase().includes('package')) category = 'Packages';
         else if (title.toLowerCase().includes('time')) category = 'Services';
-        else if (title.toLowerCase().includes('holiday')) category = 'Holidays';
-        else if (title.toLowerCase().includes('price') || title.toLowerCase().includes('cost')) category = 'Pricing';
-        else if (title.toLowerCase().includes('address') || title.toLowerCase().includes('change')) category = 'Services';
         
         // Format content for display
         const formattedContent = formatArticleContent(content, title);
@@ -73,8 +90,8 @@ export async function GET() {
     
     return NextResponse.json(articles);
   } catch (error) {
-    console.error('Error reading article file:', error);
-    return NextResponse.json({ error: 'Failed to read articles' }, { status: 500 });
+    console.error('Error processing articles:', error);
+    return NextResponse.json({ error: 'Failed to process articles' }, { status: 500 });
   }
 }
 
@@ -99,77 +116,6 @@ function formatArticleContent(content: string, currentTitle: string): string {
     return `<ul class="list-disc pl-6 my-4 space-y-2 text-gray-800">${match}</ul>\n`;
   });
   
-  // Add comprehensive interlinking - link to home page for key terms
-  const homePageLinks = [
-    { term: 'USPS tracking', link: '/', anchor: 'USPS tracking tool' },
-    { term: 'tracking number', link: '/', anchor: 'track your package' },
-    { term: 'package tracking', link: '/', anchor: 'package tracking' },
-    { term: 'delivery status', link: '/', anchor: 'check delivery status' },
-    { term: 'shipment status', link: '/', anchor: 'shipment status' },
-    { term: 'real-time tracking', link: '/', anchor: 'real-time tracking' },
-    { term: 'track package', link: '/', anchor: 'track your package' },
-    { term: 'USPS near me', link: '/', anchor: 'find USPS locations' },
-    { term: 'post office', link: '/', anchor: 'USPS services' },
-    { term: 'mail delivery', link: '/', anchor: 'mail tracking' }
-  ];
-  
-  // Apply home page links
-  homePageLinks.forEach(({ term, link, anchor }) => {
-    const regex = new RegExp(`\\b${term}\\b`, 'gi');
-    formatted = formatted.replace(regex, `<a href="${link}" class="text-[#1a365d] underline decoration-2 underline-offset-2 font-medium hover:text-[#15223e] transition-colors" title="${anchor}">${term}</a>`);
-  });
-  
-  // Add contextual links to common USPS services
-  const serviceLinks = {
-    'Priority Mail': '/articles/priority-mail-tracking',
-    'First-Class Mail': '/articles/first-class-mail-tracking',
-    'Package Services': '/articles/usps-package-services',
-    'Mail Forwarding': '/articles/usps-mail-forwarding',
-    'PO Box': '/articles/usps-po-box-services',
-    'International Shipping': '/articles/usps-international-shipping',
-    'Sunday delivery': '/articles/does-usps-deliver-on-sunday',
-    'Saturday delivery': '/articles/does-usps-deliver-on-saturday',
-    'delivery times': '/articles/what-time-does-usps-deliver',
-    'USPS hours': '/articles/is-usps-open-today',
-    'holiday delivery': '/articles/usps-holiday-delivery-schedule',
-    'package hold': '/articles/usps-package-hold',
-    'change of address': '/articles/usps-change-of-address',
-    'tracking updates': '/articles/usps-tracking-updates',
-    'lost package': '/articles/usps-lost-package',
-    'damaged package': '/articles/usps-damaged-package',
-    'return to sender': '/articles/usps-return-to-sender'
-  };
-  
-  Object.entries(serviceLinks).forEach(([service, link]) => {
-    const regex = new RegExp(`\\b${service}\\b`, 'gi');
-    formatted = formatted.replace(regex, `<a href="${link}" class="text-[#1a365d] underline decoration-2 underline-offset-2 font-medium hover:text-[#15223e] transition-colors" title="Learn more about ${service}">${service}</a>`);
-  });
-  
-  // Add article cross-references based on common topics
-  const topicLinks = [
-    { keywords: ['delivery', 'deliver'], article: '/articles/what-time-does-usps-deliver', title: 'USPS delivery times' },
-    { keywords: ['weekend', 'saturday', 'sunday'], article: '/articles/does-usps-deliver-on-sunday', title: 'Weekend delivery' },
-    { keywords: ['holiday', 'christmas', 'thanksgiving'], article: '/articles/usps-holiday-delivery-schedule', title: 'Holiday delivery' },
-    { keywords: ['open', 'hours', 'location'], article: '/articles/is-usps-open-today', title: 'USPS hours' },
-    { keywords: ['track', 'tracking', 'status'], article: '/', title: 'Track your package' },
-    { keywords: ['package', 'parcel'], article: '/articles/usps-package-services', title: 'Package services' },
-    { keywords: ['mail', 'letter'], article: '/articles/usps-mail-services', title: 'Mail services' },
-    { keywords: ['international', 'global'], article: '/articles/usps-international-shipping', title: 'International shipping' },
-    { keywords: ['forward', 'redirect'], article: '/articles/usps-mail-forwarding', title: 'Mail forwarding' },
-    { keywords: ['address', 'move', 'relocation'], article: '/articles/usps-change-of-address', title: 'Change of address' }
-  ];
-  
-  // Apply topic-based interlinking
-  topicLinks.forEach(({ keywords, article, title }) => {
-    keywords.forEach(keyword => {
-      const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
-      formatted = formatted.replace(regex, `<a href="${article}" class="text-[#1a365d] underline decoration-2 underline-offset-2 font-medium hover:text-[#15223e] transition-colors" title="${title}">${keyword}</a>`);
-    });
-  });
-  
-  // Convert markdown links to HTML
-  formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-[#1a365d] underline decoration-2 underline-offset-2 font-medium hover:text-[#15223e] transition-colors" target="_blank" rel="noopener noreferrer">$1</a>');
-  
   // Convert paragraphs (text blocks separated by double newlines)
   const paragraphs = formatted.split('\n\n').map(para => {
     const trimmed = para.trim();
@@ -188,7 +134,7 @@ function parseArticleContent(section: string): string {
   let content = section
     .replace(/^URL\s*:\s*.+$/gm, '') // Remove URL lines
     .replace(/^Title\s*:\s*.+$/gm, '') // Remove Title lines
-    .replace(/^________________________________________$/gm, '') // Remove separator lines
+    .replace(/^_{5,}$/gm, '') // Remove separator lines
     .trim();
   
   // Clean up any remaining metadata patterns
