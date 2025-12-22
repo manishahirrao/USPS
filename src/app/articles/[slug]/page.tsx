@@ -217,10 +217,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 animate-fade-in-up-delay-2">
             {article.title}
           </h1>
-          
-          <p className="text-xl text-[#a8d8e8] max-w-3xl animate-fade-in-up-delay-3">
-            {article.excerpt}
-          </p>
         </div>
       </div>
 

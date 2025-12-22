@@ -141,14 +141,14 @@ export default function TrackingForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-4xl mx-auto">
       <div className="relative flex flex-col sm:flex-row gap-2">
         <input
           type="text"
           value={trackingNumber}
           onChange={(e) => setTrackingNumber(e.target.value)}
-          placeholder="Enter tracking number"
-          className="flex-1 bg-white text-gray-900 py-3 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-base border border-gray-300 rounded-lg px-4 py-3 focus:ring-[#2E5288] focus:border-[#2E5288]"
+          placeholder="e.g. 9400111109876543210123 or 123456789012"
+          className="w-full max-w-4xl bg-white text-gray-900 py-3 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-base border border-gray-300 rounded-lg px-4 py-3 focus:ring-[#2E5288] focus:border-[#2E5288]"
           disabled={isLoading || isProcessed}
           autoFocus
         />
